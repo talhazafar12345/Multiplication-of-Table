@@ -1,0 +1,125 @@
+Index.html
+
+<h1>Multiplication of Table</h1>
+
+<input placeholder="Enter Table No" class="p1" type="text" name="" id="inp">
+
+<input placeholder="Enter Table Length" class="p1" type="text" name="" id="sec">
+
+<button class="btn" onclick="print()">Submit</button>
+<button onclick="window.location.reload()" class="btn">Remove</button>
+
+
+<div id="para">
+
+</div>
+
+style.css
+
+.p1{
+  position: relative;
+  left: 45px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 5px;
+  color: red;
+  height: 20px;
+
+
+}
+
+
+.btn{
+    position: relative;
+  left: 45px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 20px;
+}
+
+
+
+h1{
+    text-align: center;
+}
+
+#para {
+margin-top:20px;
+list-style: square;
+position: relative;
+left: 220px;
+color: white;
+  }
+
+
+  body{
+    background-color: darkgoldenrod;
+  }
+
+
+  h1{
+    color: black;
+  }
+
+  input::placeholder {
+    color: purple;        
+    opacity: 1;         
+  }
+
+  App.JS
+
+function print(){
+
+
+var getInp=document.getElementById("inp")
+var getSec=document.getElementById("sec")
+
+var getPara=document.getElementById("para")
+
+
+for(var i=1;i<=getSec.value;i++){
+
+  var num=getInp.value
+  if(isNaN(num)){
+
+    alert("Please enter number")
+    break;
+  }
+
+
+  getPara.innerHTML+=`<li>${getInp.value}x ${i}= ${getInp.value*i}</li>`
+ 
+}
+
+getInp.value=""
+
+var limit=getSec.value
+
+if(isNaN(limit)){
+
+  alert("Please enter number")
+  
+}
+
+getSec.value=""
+
+
+
+}
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
