@@ -1,5 +1,9 @@
 Index.html
 
+<div class="p5">
+
+
+
 <h1>Multiplication of Table</h1>
 
 <input placeholder="Enter Table No" class="p1" type="text" name="" id="inp">
@@ -10,98 +14,168 @@ Index.html
 <button onclick="window.location.reload()" class="btn">Remove</button>
 
 
+</div>
 <div id="para">
 
 </div>
 
+
 style.css
 
 .p1{
-  position: relative;
-  left: 45px;
-  border-radius: 10px;
-  border: none;
-  padding-left: 5px;
-  color: red;
-  height: 20px;
-
-
-}
-
-
-.btn{
     position: relative;
-  left: 45px;
-  background-color: blueviolet;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  height: 20px;
-}
-
-
-
-h1{
-    text-align: center;
-}
-
-#para {
-margin-top:20px;
-list-style: square;
-position: relative;
-left: 220px;
-color: white;
+    left: 45px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 5px;
+    color: red;
+    height: 50px;
+  
+  
   }
-
-
-  body{
-    background-color: darkgoldenrod;
+  
+  
+  .btn{
+      position: relative;
+    left: 45px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
   }
-
-
+  
+  
+  
   h1{
-    color: black;
+      text-align: center;
+      color: black;
   }
+  
+  #para {
+  margin-top:20px;
+  list-style: square;
+  position: relative;
+  left: 700px;
+  color: white;
+    }
+  
+  
+    body{
+      background-color: darkgoldenrod;
+    }
+  
+  
+   
+  
+    input::placeholder {
+      color: purple;        
+      opacity: 1;         
+    }
 
-  input::placeholder {
-    color: purple;        
-    opacity: 1;         
-  }
+    .p5{
+        text-align: center;
+    }
+
+
+    @media (max-width: 600px) {
+        .p1, .btn {
+          position: static;
+          width: 80%;
+          margin: 10px auto;
+          display: block;
+        }
+      
+        #para {
+          position: static;
+          margin: 20px auto;
+          margin-left: 20px;
+          
+          padding-left: 20px;
+        }
+      
+        .p5 {
+          padding: 10px;
+        }
+      }
+
+
+
+      @media (max-width: 2000px) {
+        .p1 {
+          width: 300px;
+          font-size: 18px;
+        }
+      
+        .btn {
+          width: 150px;
+          font-size: 18px;
+        }
+      
+        h1 {
+          font-size: 36px;
+        }
+      
+        #para {
+          left: 0; /* Center ke aaspaas kar diya */
+          margin: 20px auto;
+          width: fit-content;
+          color: white;
+        }
+      
+        .p5 {
+          padding: 20px;
+        }
+      }
+
+
+
+    
 
   App.JS
 
 function print(){
 
 
-var getInp=document.getElementById("inp")
-var getSec=document.getElementById("sec")
-
-var getPara=document.getElementById("para")
-
-
-for(var i=1;i<=getSec.value;i++){
-
-  var num=getInp.value
-  if(isNaN(num)){
-
-    alert("Please enter number")
-    break;
-  }
-
-
-  getPara.innerHTML+=`<li>${getInp.value}x ${i}= ${getInp.value*i}</li>`
- 
-}
-
-getInp.value=""
-
-var limit=getSec.value
-
-if(isNaN(limit)){
-
-  alert("Please enter number")
+  var getInp=document.getElementById("inp")
+  var getSec=document.getElementById("sec")
   
-}
+  var getPara=document.getElementById("para")
+  
+  
+  for(var i=1;i<=getSec.value;i++){
+  
+    var num=getInp.value
+    if(isNaN(num)){
+  
+      alert("Please enter number")
+      break;
+    }
+  
+  
+    getPara.innerHTML+=`<li>${getInp.value}x ${i}= ${getInp.value*i}</li>`
+   
+  }
+  
+  getInp.value=""
+  
+  var limit=getSec.value
+  
+  if(isNaN(limit)){
+  
+    alert("Please enter number")
+    
+  }
+  
+  getSec.value=""
+  
+  
+  
+  }
+    
+    
+    
 
 getSec.value=""
 
